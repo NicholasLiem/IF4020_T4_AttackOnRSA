@@ -1,6 +1,5 @@
-from Crypto.Util.number import inverse
+from Crypto.Util.number import inverse, long_to_bytes
 import random
-import math
 
 class Utils:
     @staticmethod
@@ -22,6 +21,8 @@ class Utils:
         d = inverse(e, phi_N)
 
         decrypted_message = pow(encrypted_message, d, N)
+        decrypted_message = long_to_bytes(decrypted_message)
+        decrypted_message = decrypted_message.decode('utf-8', errors='replace')
         return decrypted_message
     
     @staticmethod
@@ -56,8 +57,3 @@ class Utils:
         if d == n:
             return None
         return d
-    
-    @staticmethod
-    def find_prime_sqrt(n):
-        p = int(math.isqrt(n))
-        return p
