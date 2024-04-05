@@ -1,19 +1,13 @@
-from math import isqrt
-from Crypto.Util.number import isPrime
-
-def find_p(n):
-    p_candidate = isqrt(n)
-
-    while p_candidate > 1:
-        if n % p_candidate == 0 and isPrime(p_candidate):
-            return p_candidate
-        p_candidate -= 1
-
-    return None
+from Utils import Utils
 
 if __name__ == "__main__":
     e = 65537
-    n = 3721
-    p = find_p(n)
-    print("Found p:", p)
-
+    encrypted_message = int(input("Encrypted message: "))
+    n = int(input("Input n: "))
+    p = Utils.find_prime_sqrt(n)
+    if p is not None:
+        decrypted_message = Utils.decrypt_rsa(encrypted_message, p, p, e)
+        decrypted_bytes = decrypted_message.to_bytes((decrypted_message.bit_length() + 7) // 8, byteorder='big')
+        print("Decrypted message:", decrypted_bytes.decode('utf-8'))
+    else:
+        print("Prime factor not found.")

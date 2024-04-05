@@ -1,4 +1,6 @@
 from Crypto.Util.number import inverse
+import random
+import math
 
 class Utils:
     @staticmethod
@@ -21,3 +23,41 @@ class Utils:
 
         decrypted_message = pow(encrypted_message, d, N)
         return decrypted_message
+    
+    @staticmethod
+    def find_prime_factor(n):
+        if n % 2 == 0:
+            return 2
+        i = 3
+        while i * i <= n:
+            if n % i == 0:
+                return i
+            i += 2
+        return None
+    
+    @staticmethod
+    def pollards_rho(n):
+        if n % 2 == 0:
+            return 2
+        
+        x = random.randint(2, n - 1)
+        y = x
+        c = random.randint(1, n - 1)
+        d = 1
+
+        def f(x):
+            return (x*x + c) % n
+
+        while d == 1:
+            x = f(x)
+            y = f(f(y))
+            d = Utils.gcd(abs(x - y), n)
+
+        if d == n:
+            return None
+        return d
+    
+    @staticmethod
+    def find_prime_sqrt(n):
+        p = int(math.isqrt(n))
+        return p
