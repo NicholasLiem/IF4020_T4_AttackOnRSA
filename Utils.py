@@ -22,7 +22,7 @@ class Utils:
 
         decrypted_message = pow(encrypted_message, d, N)
         decrypted_message = long_to_bytes(decrypted_message)
-        decrypted_message = decrypted_message.decode('utf-8', errors='replace')
+        decrypted_message = decrypted_message.decode('utf-8')
         return decrypted_message
     
     @staticmethod

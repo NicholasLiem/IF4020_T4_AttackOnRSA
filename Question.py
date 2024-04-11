@@ -18,7 +18,7 @@ try:
         message_asli = "KRIPTOGRAFIITB{" + str(random.randint(1,10000))+ "}"
         message_asli = message_asli.encode('utf-8')
         message_int = bytes_to_long(message_asli)
-        version = random.choice(paket_soal)
+        version = "B"
         print(f"paket_soal = {version}\n")
         if version == "A":
             while True:
@@ -58,19 +58,19 @@ try:
             n = getStrongPrime(1024)
             e = 65537
             enc = pow(message_int, e, n)
-            print(f"n = {n}\n")
-            print(f"e = {e}\n")
-            print(f"c = {enc}\n")
-            try:
-                print("Jawaban = ")
-                input_dec = input().strip("\n")
-                if input_dec == message_asli.decode():
-                    print("Uwaw keren!!!\n")
-                    counter += 1
-                else:
-                    print(":((((((\n")
-            except Exception as e:
-                print("Error\n")
+        print(f"n = {n}\n")
+        print(f"e = {e}\n")
+        print(f"c = {enc}\n")
+        try:
+            print("Jawaban = ")
+            input_dec = input().strip("\n")
+            if input_dec == message_asli.decode():
+                print("Uwaw keren!!!\n")
+                counter += 1
+            else:
+                print(":((((((\n")
+        except Exception as e:
+            print("Error\n")
 except Exception as e:
     print("Error\n")
 finally:
