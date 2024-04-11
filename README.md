@@ -1,7 +1,6 @@
 # IF4020_T4_CrackingRSA
-A simple analysis tool to crack the weak RSA encryption parameters
-
-### How to run:
+### Section A: Weak RSA Parameters (Question.py)
+#### How to run:
 1. Run the `Question.py` to generate a test case
 ```sh
 python3 Question.py
@@ -13,3 +12,11 @@ python3 Cracker.py
 ```
 
 3. Input the `n, e, c` from `Question.py` terminal to the `Cracker.py`'s terminal
+
+
+### Section B: Vulnerabilities on Arsip.py
+1. There is no input validation for user input especially integer ones
+we can use negative numbers for the arsip array's index
+2. We can generate an access token using the negative index of `nomor_arsip_admin` and when we're trying to read
+the index we can make use of negative of the access token to access the real index of
+`nomor_arsip_admin`. Hence, we can crack the arsip[nomor_arsip_admin] info.
