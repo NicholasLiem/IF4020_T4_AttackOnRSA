@@ -18,7 +18,7 @@ try:
         message_asli = "KRIPTOGRAFIITB{" + str(random.randint(1,10000))+ "}"
         message_asli = message_asli.encode('utf-8')
         message_int = bytes_to_long(message_asli)
-        version = "B"
+        version = input("Pilih paket soal yang mau diuji: ")
         print(f"paket_soal = {version}\n")
         if version == "A":
             while True:
@@ -35,7 +35,6 @@ try:
             n = p * p
             e = 65537
             enc = pow(message_int, e, n)
-            print("Nilai p: ", p)
         elif version == "C":
             while True:
                 p = getStrongPrime(1024)
