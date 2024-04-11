@@ -24,9 +24,12 @@ class Utils:
         d = inverse(e, phi_N)
 
         decrypted_message = pow(encrypted_message, d, N)
-        decrypted_message = long_to_bytes(decrypted_message)
-        decrypted_message = decrypted_message.decode('utf-8')
-        return decrypted_message
+        return Utils.decode_message(decrypted_message)
+    
+    @staticmethod
+    def decode_message(message):
+        message = long_to_bytes(message)
+        return message.decode('utf-8')
     
     @staticmethod
     def find_prime_factor(n):
