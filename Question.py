@@ -35,6 +35,7 @@ try:
             n = p * p
             e = 65537
             enc = pow(message_int, e, n)
+            print("Nilai p: ", p)
         elif version == "C":
             while True:
                 p = getStrongPrime(1024)

@@ -16,7 +16,10 @@ class Utils:
     def decrypt_rsa(encrypted_message, p, q, e):
         N = p * q
 
-        phi_N = (p - 1) * (q - 1)
+        if p == q:
+            phi_N = p * (p-1)
+        else:
+            phi_N = (p - 1) * (q - 1)
 
         d = inverse(e, phi_N)
 
