@@ -63,3 +63,14 @@ class Utils:
         if d == n:
             return None
         return d
+    
+    def integer_sqrt(N):
+      lo = 0
+      hi = N
+      while lo <= hi:
+          mid = (lo + hi) // 2
+          if mid * mid > N:
+              hi = mid - 1
+          else:
+              lo = mid + 1
+      return hi

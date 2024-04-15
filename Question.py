@@ -29,7 +29,7 @@ try:
                 e = 65537
                 check = GCD(e, (p-1)*(q-1)) == 1
                 if check: break
-                enc = pow(message_int, e, n)
+            enc = pow(message_int, e, n)
         elif version == "B":
             p = getStrongPrime(1024)
             n = p * p
@@ -45,9 +45,9 @@ try:
                 e = random.randint(2**15, 2**16)
                 check = GCD(e, (p-1)*(q-1)) == 1
                 if check: break
-                d = pow(e, -1, tot)
-                enc = pow(message_int, d, n)
-                e = d
+            d = pow(e, -1, tot)
+            enc = pow(message_int, d, n)
+            e = d
         elif version == "D":
             p = getStrongPrime(1024)
             q = getStrongPrime(1024)

@@ -21,7 +21,7 @@ def main():
     try:
         perintah = "0"
         while perintah != "4":
-            print("Selamat datang di arsip dijital Kriptografi ITB!")
+            print("\nSelamat datang di arsip dijital Kriptografi ITB!")
             print("Ketik angka untuk menjalankan perintah: ")
             print("1. Tambah Arsip")
             print("2. Baca Arsip")
