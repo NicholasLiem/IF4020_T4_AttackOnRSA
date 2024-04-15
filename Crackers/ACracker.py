@@ -11,19 +11,20 @@ class ACracker(Strategy):
 
         sqrt = int(math.isqrt(n))
         p = sqrt
-        print(p)
 
 
         while (True):
           p = nextprime(p)
           q = p
+          # Check if happens to be the same
+          if (q * p == n): break
 
           # Check forward
           for i in range (3):
             q = nextprime(q)
             if (q * p == n): break
           if (q * p == n): break
-
+        
           q = p
           # Check backward
           for i in range (3):
