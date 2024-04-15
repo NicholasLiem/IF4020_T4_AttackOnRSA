@@ -39,7 +39,7 @@ try:
             while True:
                 p = getStrongPrime(1024)
                 q = getStrongPrime(1024)
-                e = random.randrange(1,65537)
+                # e = random.randrange(1,65537) # Useless??
                 n = p * q
                 tot = (p-1) * (q-1)
                 e = random.randint(2**15, 2**16)
@@ -47,7 +47,7 @@ try:
                 if check: break
             d = pow(e, -1, tot)
             enc = pow(message_int, d, n)
-            e = d
+            e = d  
         elif version == "D":
             p = getStrongPrime(1024)
             q = getStrongPrime(1024)

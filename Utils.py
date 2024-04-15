@@ -1,5 +1,6 @@
 from Crypto.Util.number import inverse, long_to_bytes
 import random
+import sympy
 
 class Utils:
     @staticmethod
@@ -74,3 +75,5 @@ class Utils:
           else:
               lo = mid + 1
       return hi
+  
+
