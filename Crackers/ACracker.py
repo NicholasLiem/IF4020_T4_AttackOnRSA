@@ -12,26 +12,23 @@ class ACracker(Strategy):
         sqrt = int(math.isqrt(n))
         print("Approximated Value of P and Q\n", str(sqrt))
         p = sqrt
-
-
-        while (True):
-          p = nextprime(p)
-          q = p
-          # Check if happens to be the same
-          if (q * p == n): break
-
-          # Check forward
-          for i in range (3):
-            q = nextprime(q)
-            if (q * p == n): break
-          if (q * p == n): break
         
+        p = prevprime(p)
+
+        count_prev = 0
+        while True:
+          count_next = 0
           q = p
-          # Check backward
-          for i in range (3):
-            q = prevprime(q)
-            if (q * p == n): break
-          if (q * p == n): break
+          while (q * p) < n:
+            print("PREV:", count_prev, "|| NEXT:", count_next)
+            if (q * p == n) : break
+            q = nextprime(q)
+            count_next +=1 
+          
+          if (q * p == n) : break
+          p = prevprime(p)
+          count_prev +=1
+
         
         print("This is P\n", str(p))
         print("This is Q\n", str(q))
