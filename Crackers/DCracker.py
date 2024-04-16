@@ -6,7 +6,7 @@ class DCracker(Strategy):
         decrypted_message = self.integer_cube_root(encrypted_message)
         print("Message: ", Utils.decode_message(decrypted_message))
     
-    def integer_cube_root(n):
+    def integer_cube_root(self, n):
         # Custom cube root for big numbers
         if n < 0:
             raise ValueError("Negative number")

@@ -1,5 +1,4 @@
 from Crackers.Strategy import Strategy
-from sympy import isprime, factorint, mod_inverse
 from Crypto.Util.number import inverse
 from Utils import Utils 
 
