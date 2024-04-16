@@ -10,6 +10,7 @@ class ACracker(Strategy):
         e = 65537
 
         sqrt = int(math.isqrt(n))
+        print("Approximated Value of P and Q\n", str(sqrt))
         p = sqrt
 
 
