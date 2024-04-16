@@ -1,10 +1,13 @@
 from Crackers.Strategy import Strategy
 from Utils import Utils
+import math
 
 class DCracker(Strategy):
     def execute(self, encrypted_message, n, e):
-        decrypted_message = self.integer_cube_root(encrypted_message)
-        print("Message: ", Utils.decode_message(decrypted_message))
+        # decrypted_message = self.integer_cube_root(encrypted_message)
+        decrypted_message = int(math.sqrt(encrypted_message))
+
+        print("Decrypted message:\n\n"+ Utils.decode_message(decrypted_message))
     
     def integer_cube_root(n):
         # Custom cube root for big numbers

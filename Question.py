@@ -19,6 +19,7 @@ try:
         message_asli = message_asli.encode('utf-8')
         message_int = bytes_to_long(message_asli)
         version = input("Pilih paket soal yang mau diuji: ")
+        # version = random.choices(paket_soal)[0]
         print(f"paket_soal = {version}\n")
         if version == "A":
             while True:

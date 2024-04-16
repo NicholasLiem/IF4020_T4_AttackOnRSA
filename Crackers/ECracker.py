@@ -7,4 +7,4 @@ class ECracker(Strategy):
     def execute(self, encrypted_message, n, e):
         d = inverse(e, n-1)
         decrypted_message = pow(encrypted_message, d,n)
-        print("Message: ",Utils.decode_message(decrypted_message))
+        print("Decrypted message:\n\n"+Utils.decode_message(decrypted_message))

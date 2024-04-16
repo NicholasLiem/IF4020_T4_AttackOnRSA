@@ -18,7 +18,7 @@ class CCracker(Strategy):
         print("This is Q\n", str(q))
 
         decrypted_message = Utils.decrypt_rsa(encrypted_message, int(p), int(q), e)
-        print("Decrypted message:", decrypted_message)
+        print("Decrypted message:\n\n"+ decrypted_message)
 
         # raise Exception("TODO: Implement this :)")
     
