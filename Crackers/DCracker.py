@@ -4,12 +4,12 @@ import math
 
 class DCracker(Strategy):
     def execute(self, encrypted_message, n, e):
-        # decrypted_message = self.integer_cube_root(encrypted_message)
-        decrypted_message = int(math.sqrt(encrypted_message))
+        decrypted_message = self.integer_cube_root(encrypted_message)
+        # decrypted_message = int(math.sqrt(encrypted_message))
 
         print("Decrypted message:\n\n"+ Utils.decode_message(decrypted_message))
     
-    def integer_cube_root(n):
+    def integer_cube_root(self, n):
         # Custom cube root for big numbers
         if n < 0:
             raise ValueError("Negative number")
