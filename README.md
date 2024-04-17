@@ -15,8 +15,8 @@ python3 Cracker.py
 
 
 ### Section B: Vulnerabilities on Arsip.py
-1. There is no input validation for user input especially integer ones
-we can use negative numbers for the arsip array's index
+1. There is no input validation for user input especially for integer inputs so
+we can use negative numbers to exploit and get access the arsip array's index
 2. We can generate an access token using the negative index of `nomor_arsip_admin` and when we're trying to read
 the index we can make use of negative of the access token to access the real index of
-`nomor_arsip_admin`. Hence, we can crack the arsip[nomor_arsip_admin] info.
+`nomor_arsip_admin` proof is given in the pdf. Hence, we can crack the arsip[nomor_arsip_admin] info.
